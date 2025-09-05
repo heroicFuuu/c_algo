@@ -1,0 +1,17 @@
+# Editor
+.vscode/
+
+# Binaries & objects
+*.o
+*.obj
+*.out
+*.exe
+*.a
+*.so
+*.dll
+*.dylib
+
+# Build dirs
+/build/
+bin/
+dist/
