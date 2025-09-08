@@ -5,7 +5,7 @@ static inline void swap_int(int *a, int *b) {
     int t = *a; *a = *b; *b = t;
 }
 
-/* Lomuto 分割：pivot = arr[end]，回傳樞紐位置 */
+/* 分割：pivot = arr[end]，回傳樞紐位置 */
 static int partition(int *arr, int front, int end) {
     int pivot = arr[end];
     int i = front - 1;
