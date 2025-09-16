@@ -35,3 +35,12 @@ g++ -std=c++17 -O2 -Wall binary_search.cpp -o a.out
 ```bash
 ./a.out
 ```
+
+## Code Formatting
+
+This project uses **clang-format** to maintain consistent coding style.  
+
+
+#### Format all files in the current directory:
+```bash
+clang-format -i *.c *.cpp *.h

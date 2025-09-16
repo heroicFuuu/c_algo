@@ -1,0 +1,34 @@
+test.c
+   │
+   ▼ (Preprocess: -E)
+   test.i
+   │
+   │  ← **Preprocess error**: 
+   │     巨集展開錯、找不到 `#include` 檔案
+   │     (例如 #include <xxx.h> 找不到)
+   │
+   ▼ (Compile: -S)
+   test.s
+   │
+   │  ← **Compile error**: 
+   │     語法錯誤、型別錯誤、少分號
+   │     warning 出現在這裡，但不會中止
+   │
+   ▼ (Assemble: -c)
+   test.o
+   │
+   │  ← **Assembler error**: 
+   │     組語語法錯誤（比較少見，除非手寫 .s/.asm）
+   │
+   ▼ (Link)
+   test.out   ← 可執行檔
+   │
+   │  ← **Linker error**: 
+   │     找不到函式實作（undefined reference）
+   │     缺少 .o 或 library (`-lm`, `-lpthread` 沒加)
+   │
+   ▼ (Run)
+   執行程式
+   │
+   │  ← **Runtime error**: 
+   │     Segmentation fault、除以零、越界存取

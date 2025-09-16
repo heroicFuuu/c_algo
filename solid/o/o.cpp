@@ -1,15 +1,17 @@
-// open closed principle 
+// open closed principle
 // 認為「軟體應該是對於擴充開放的，但是對於修改封閉的」的概念。
 
 class Shape {
-public:
+  public:
     enum Type { Circle, Square } type;
     double radius, side;
 };
 // bad
 double area(const Shape& s) {
-    if (s.type == Shape::Circle) return 3.14 * s.radius * s.radius;
-    if (s.type == Shape::Square) return s.side * s.side;
+    if (s.type == Shape::Circle)
+        return 3.14 * s.radius * s.radius;
+    if (s.type == Shape::Square)
+        return s.side * s.side;
     return 0; // ❌ 每新增一種形狀都要改這裡
 }
 

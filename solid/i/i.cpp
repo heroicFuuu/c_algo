@@ -8,10 +8,18 @@
 //     virtual void fax() = 0; // ❌ 不是每台機器都有傳真
 // };
 
-class IPrinter { public: virtual void print() = 0; };
-class IScanner { public: virtual void scan() = 0; };
+class IPrinter {
+  public:
+    virtual void print() = 0;
+};
+class IScanner {
+  public:
+    virtual void scan() = 0;
+};
 
 class MultiFunctionPrinter : public IPrinter, public IScanner {
-    void print() override { /* ... */ }
-    void scan() override { /* ... */ }
+    void print() override { /* ... */
+    }
+    void scan() override { /* ... */
+    }
 };
