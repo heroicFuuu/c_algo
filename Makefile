@@ -7,4 +7,4 @@ clean:
 
 format:
 	@echo "Formatting all source files"
-	find . -regex '.*\.\(c\|cpp|h|\)' -exec clang-Formatting -i {} +
+	find . -regex '.*\.\(c\|cpp\|h\)' -exec clang-format -i {} +

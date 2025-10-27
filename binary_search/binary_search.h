@@ -4,5 +4,4 @@
 
 using std::vector;
 
-
-int binary_search(vector<int> &arr, int target);
+int binary_search(vector<int>& arr, int target);

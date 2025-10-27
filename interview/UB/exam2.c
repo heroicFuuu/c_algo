@@ -4,4 +4,3 @@ int main(void) {
     printf("\n %d..%d..%d \n", a + b + c, (b = b * 2), (c = c * 2));
     return 0;
 }
-

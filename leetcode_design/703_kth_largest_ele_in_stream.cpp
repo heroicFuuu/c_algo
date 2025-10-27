@@ -1,27 +1,28 @@
-#include<queue>
-#include<vector>
 #include <functional> // for greater<T>
+#include <queue>
+#include <vector>
 
-using std::vector;
+using std::greater; // in functional header
 using std::priority_queue;
-using std::greater; //in functional header
+using std::vector;
 class KthLargest {
-public:
-
+  public:
     priority_queue<int, vector<int>, greater<int>> pq;
-    int ksize; 
+    int ksize;
     KthLargest(int k, vector<int>& nums) {
         ksize = k;
-        for (int i = 0 ; i < nums.size() ;i++){
+        for (int i = 0; i < nums.size(); i++) {
             pq.push(nums[i]);
-            if ((int)pq.size() > ksize) pq.pop();
+            if ((int) pq.size() > ksize)
+                pq.pop();
         }
-    }   
-    
+    }
+
     int add(int val) {
 
         pq.push(val);
-        if ((int)pq.size() >ksize)  pq.pop();
+        if ((int) pq.size() > ksize)
+            pq.pop();
 
         return pq.top();
     }

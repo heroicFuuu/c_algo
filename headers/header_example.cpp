@@ -42,7 +42,8 @@ void demo_map() {
     map<int, string> mp;
     mp[1] = "one";
     auto it = mp.upper_bound(0); // 找到第一個 key > 0
-    if (it != mp.end()) cout << "map key: " << it->first << endl;
+    if (it != mp.end())
+        cout << "map key: " << it->first << endl;
     auto it2 = prev(it, 1); // std::prev 來自 <iterator>
     cout << "map prev: " << it2->first << endl;
 }
@@ -57,14 +58,17 @@ void demo_unordered_map() {
 #include <queue>
 void demo_queue() {
     queue<int> q;
-    q.push(1); q.push(2);
+    q.push(1);
+    q.push(2);
     cout << "queue front: " << q.front() << endl;
 }
 
 #include <queue> // 同一個 header 有 priority_queue
 void demo_priority_queue() {
     priority_queue<int> pq;
-    pq.push(3); pq.push(1); pq.push(2);
+    pq.push(3);
+    pq.push(1);
+    pq.push(2);
     cout << "priority_queue top: " << pq.top() << endl;
 }
 
@@ -111,23 +115,23 @@ void demo_sstream() {
     stringstream ss("10 20 30");
     int a, b, c;
     ss >> a >> b >> c;
-    cout << "stringstream: " << a+b+c << endl;
+    cout << "stringstream: " << a + b + c << endl;
 }
 
 #include <cctype>
 void demo_cctype() {
     char c1 = 'a';
     char c2 = 'Z';
-    cout << (char)toupper(c1) << endl; // A
-    cout << (char)tolower(c2) << endl; // z
+    cout << (char) toupper(c1) << endl; // A
+    cout << (char) tolower(c2) << endl; // z
 }
 
 void demo_check() {
     char c1 = 'a', c2 = '9', c3 = ' ';
-    cout << isalpha(c1) << endl;   // 1 (是字母)
-    cout << isdigit(c2) << endl;   // 1 (是數字)
-    cout << isalnum(c2) << endl;   // 1 (數字也是字母數字組)
-    cout << isspace(c3) << endl;   // 1 (空白符號)
+    cout << isalpha(c1) << endl; // 1 (是字母)
+    cout << isdigit(c2) << endl; // 1 (是數字)
+    cout << isalnum(c2) << endl; // 1 (數字也是字母數字組)
+    cout << isspace(c3) << endl; // 1 (空白符號)
 }
 
 // ---------------- Others ----------------
@@ -145,8 +149,8 @@ void demo_bitset() {
 
 #include <functional>
 void demo_functional() {
-    function<int(int,int)> f = [](int a, int b){ return a+b; };
-    cout << "function: " << f(2,3) << endl;
+    function<int(int, int)> f = [](int a, int b) { return a + b; };
+    cout << "function: " << f(2, 3) << endl;
 }
 
 #include <memory>
@@ -163,12 +167,26 @@ void demo_iterator() {
 }
 
 int main() {
-    demo_vector(); demo_deque(); demo_list();
-    demo_set(); demo_unordered_set(); demo_map();
-    demo_unordered_map(); demo_queue(); demo_priority_queue();
-    demo_stack(); demo_pair(); demo_algorithm(); demo_numeric();
-    demo_string(); demo_sstream(); demo_cctype();
-    demo_tuple(); demo_bitset(); demo_functional();
-    demo_memory(); demo_iterator();
+    demo_vector();
+    demo_deque();
+    demo_list();
+    demo_set();
+    demo_unordered_set();
+    demo_map();
+    demo_unordered_map();
+    demo_queue();
+    demo_priority_queue();
+    demo_stack();
+    demo_pair();
+    demo_algorithm();
+    demo_numeric();
+    demo_string();
+    demo_sstream();
+    demo_cctype();
+    demo_tuple();
+    demo_bitset();
+    demo_functional();
+    demo_memory();
+    demo_iterator();
     return 0;
 }

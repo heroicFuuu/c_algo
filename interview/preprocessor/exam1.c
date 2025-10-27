@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define VAR 6
 
-int func(int a){
+int func(int a) {
     int m = 3;
 #ifdef VAR
 #undef VAR
@@ -12,7 +12,7 @@ int func(int a){
 }
 
 int main(void) {
-	int i=5;
-	printf("%d\n", func(i));
-	return 0;
+    int i = 5;
+    printf("%d\n", func(i));
+    return 0;
 }

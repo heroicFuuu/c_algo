@@ -1,43 +1,43 @@
-class Node{
-public:
+class Node {
+  public:
     int val;
     Node* next;
     Node* prev;
-    Node(int value): val(value), next(this), prev(this){};
-
+    Node(int value) : val(value), next(this), prev(this){};
 };
 
 class MyLinkedList {
-public:
+  public:
     int lens;
     Node* head;
     MyLinkedList() {
         lens = 0;
         head = new Node(0);
     }
-    
+
     int get(int index) {
-        if (index < 0 || index >= lens) return -1;
+        if (index < 0 || index >= lens)
+            return -1;
         //
         Node* p = head->next;
 
-        for (int i = 0; i < index ; i++) p = p->next;
+        for (int i = 0; i < index; i++)
+            p = p->next;
 
         return p->val;
     }
-    
+
     void addAtHead(int val) {
         Node* p = new Node(val);
-        head->next->prev = p ;
-        p->next          = head->next;
+        head->next->prev = p;
+        p->next = head->next;
 
         head->next = p;
-        p->prev    = head;
-        
-        lens++; 
-        
+        p->prev = head;
+
+        lens++;
     }
-    
+
     void addAtTail(int val) {
         Node* p = new Node(val);
         head->prev->next = p;
@@ -45,21 +45,22 @@ public:
 
         head->prev = p;
         p->next = head;
-        lens ++;
-        
+        lens++;
     }
-    
+
     void addAtIndex(int index, int val) {
-        if (index > lens) return ;
+        if (index > lens)
+            return;
         if (index == lens) {
             addAtTail(val);
-            return ;
+            return;
         }
-        
+
         Node* newNode = new Node(val);
 
         Node* p = head->next;
-        for (int i = 0; i < index ; i++) p = p->next;
+        for (int i = 0; i < index; i++)
+            p = p->next;
         p->prev->next = newNode;
         newNode->prev = p->prev;
 
@@ -67,17 +68,18 @@ public:
         newNode->next = p;
         lens++;
     }
-    
+
     void deleteAtIndex(int index) {
-        if (index < 0 || index >= lens) return;
+        if (index < 0 || index >= lens)
+            return;
         Node* p = head->next;
-        for (int i = 0; i < index ; i++) p = p->next;
+        for (int i = 0; i < index; i++)
+            p = p->next;
         p->prev->next = p->next;
         p->next->prev = p->prev;
 
-        delete(p);
-        
-        lens--;
+        delete (p);
 
+        lens--;
     }
 };

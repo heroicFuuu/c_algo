@@ -1,6 +1,5 @@
-#define dPS struct s *  // 這只是替換字元
-typedef struct s * tPS;  
-  
+#define dPS struct s* // 這只是替換字元
+typedef struct s* tPS;
 
 /*
 

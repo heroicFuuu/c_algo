@@ -2,8 +2,8 @@
 #include <string.h>
 
 /* ---- 自己實作 ---- */
-char *my_strcpy(char *dest, const char *src) {
-    char *ret = dest;
+char* my_strcpy(char* dest, const char* src) {
+    char* ret = dest;
     while (*src != '\0') {
         *dest++ = *src++;
     }
@@ -11,9 +11,10 @@ char *my_strcpy(char *dest, const char *src) {
     return ret;
 }
 
-char *my_strcat(char *dest, const char *src) {
-    char *ret = dest;
-    while (*dest != '\0') dest++;
+char* my_strcat(char* dest, const char* src) {
+    char* ret = dest;
+    while (*dest != '\0')
+        dest++;
     while (*src != '\0') {
         *dest++ = *src++;
     }
@@ -21,18 +22,19 @@ char *my_strcat(char *dest, const char *src) {
     return ret;
 }
 
-int my_strlen(const char *str) {
+int my_strlen(const char* str) {
     int len = 0;
-    while (*str++ != '\0') len++;
+    while (*str++ != '\0')
+        len++;
     return len;
 }
 
-int my_strcmp(const char *s1, const char *s2) {
+int my_strcmp(const char* s1, const char* s2) {
     while (*s1 && (*s1 == *s2)) {
         s1++;
         s2++;
     }
-    return *(const unsigned char *)s1 - *(const unsigned char *)s2;
+    return *(const unsigned char*) s1 - *(const unsigned char*) s2;
 }
 
 /* ---- 測試 ---- */
@@ -72,16 +74,12 @@ int main() {
 
     /* 測試 strcmp */
     printf("\n==== strcmp ====\n");
-    printf("'Hello' vs 'Hello' → my: %d | std: %d\n",
-           my_strcmp("Hello", "Hello"), strcmp("Hello", "Hello"));
-    printf("'ABC' vs 'ABD' → my: %d | std: %d\n",
-           my_strcmp("ABC", "ABD"), strcmp("ABC", "ABD"));
-    printf("'ABD' vs 'ABC' → my: %d | std: %d\n",
-           my_strcmp("ABD", "ABC"), strcmp("ABD", "ABC"));
-    printf("'' vs 'A' → my: %d | std: %d\n",
-           my_strcmp("", "A"), strcmp("", "A"));
-    printf("'A' vs '' → my: %d | std: %d\n",
-           my_strcmp("A", ""), strcmp("A", ""));
+    printf("'Hello' vs 'Hello' → my: %d | std: %d\n", my_strcmp("Hello", "Hello"),
+           strcmp("Hello", "Hello"));
+    printf("'ABC' vs 'ABD' → my: %d | std: %d\n", my_strcmp("ABC", "ABD"), strcmp("ABC", "ABD"));
+    printf("'ABD' vs 'ABC' → my: %d | std: %d\n", my_strcmp("ABD", "ABC"), strcmp("ABD", "ABC"));
+    printf("'' vs 'A' → my: %d | std: %d\n", my_strcmp("", "A"), strcmp("", "A"));
+    printf("'A' vs '' → my: %d | std: %d\n", my_strcmp("A", ""), strcmp("A", ""));
 
     return 0;
 }

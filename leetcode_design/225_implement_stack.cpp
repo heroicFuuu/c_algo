@@ -2,31 +2,30 @@
 using std::vector;
 
 class MyStack {
-public:
+  public:
     vector<int> q;
     int n;
     MyStack() {
         n = -1;
         q.reserve(100);
     }
-    
+
     void push(int x) {
-        n ++;
+        n++;
         q[n] = x;
     }
-    
+
     int pop() {
         int ret = q[n];
         n--;
         return ret;
     }
-    
+
     int top() {
         return q[n];
     }
-    
+
     bool empty() {
-        return n == -1 ;
+        return n == -1;
     }
 };
-

@@ -1,19 +1,18 @@
-#include<stdio.h>
-int main()
-{
-   int a;
-   char *x;
-   x = (char *) &a;
-   a = 512;
-   x[0] = 1;// 
-   x[1] = 2;
-   printf("%d\n",a);
- 
-   getchar();
-   return 0;
-} 
+#include <stdio.h>
+int main() {
+    int a;
+    char* x;
+    x = (char*) &a;
+    a = 512;
+    x[0] = 1; //
+    x[1] = 2;
+    printf("%d\n", a);
+
+    getchar();
+    return 0;
+}
 /*
-int  4 byte 
+int  4 byte
 char 2 byte
 low   ---------------------------------->  high
 little endian
@@ -29,4 +28,3 @@ little endian
 
 
 */
-

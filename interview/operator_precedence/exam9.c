@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define L 10
 void main() {
-    auto a = 10;//int a = 10;
+    auto a = 10; // int a = 10;
     switch (a, a * 2) {
     case L:
         printf("ABC");

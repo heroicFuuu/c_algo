@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 // 定義節點
 typedef struct Node {
@@ -10,19 +10,19 @@ typedef struct Node {
 
 // 定義循環佇列
 typedef struct {
-    int capacity;   // 最大容量
-    int count;      // 當前元素數
-    Node* head;     // 哨兵節點 (dummy head)
+    int capacity; // 最大容量
+    int count;    // 當前元素數
+    Node* head;   // 哨兵節點 (dummy head)
 } MyCircularQueue;
 
 // 建立循環佇列
 MyCircularQueue* myCircularQueueCreate(int k) {
-    MyCircularQueue* obj = (MyCircularQueue*)malloc(sizeof(MyCircularQueue));
+    MyCircularQueue* obj = (MyCircularQueue*) malloc(sizeof(MyCircularQueue));
     obj->capacity = k;
     obj->count = 0;
 
     // 建立哨兵節點，prev/next 都指向自己
-    obj->head = (Node*)malloc(sizeof(Node));
+    obj->head = (Node*) malloc(sizeof(Node));
     obj->head->val = 0; // dummy 值，不會用到
     obj->head->next = obj->head;
     obj->head->prev = obj->head;
@@ -32,9 +32,10 @@ MyCircularQueue* myCircularQueueCreate(int k) {
 
 // 入隊 (插到尾巴，即 head->prev 之前)
 bool myCircularQueueEnQueue(MyCircularQueue* obj, int value) {
-    if (obj->count == obj->capacity) return false;
+    if (obj->count == obj->capacity)
+        return false;
 
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node* newNode = (Node*) malloc(sizeof(Node));
     newNode->val = value;
 
     Node* tail = obj->head->prev;
@@ -50,7 +51,8 @@ bool myCircularQueueEnQueue(MyCircularQueue* obj, int value) {
 
 // 出隊 (刪除 head->next，即隊首)
 bool myCircularQueueDeQueue(MyCircularQueue* obj) {
-    if (obj->count == 0) return false;
+    if (obj->count == 0)
+        return false;
 
     Node* front = obj->head->next;
     obj->head->next = front->next;
@@ -63,13 +65,15 @@ bool myCircularQueueDeQueue(MyCircularQueue* obj) {
 
 // 取隊首
 int myCircularQueueFront(MyCircularQueue* obj) {
-    if (obj->count == 0) return -1;
+    if (obj->count == 0)
+        return -1;
     return obj->head->next->val;
 }
 
 // 取隊尾
 int myCircularQueueRear(MyCircularQueue* obj) {
-    if (obj->count == 0) return -1;
+    if (obj->count == 0)
+        return -1;
     return obj->head->prev->val;
 }
 

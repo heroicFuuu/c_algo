@@ -1,10 +1,10 @@
-#include<stdio.h>
+#include <stdio.h>
 
 #define a 10
 
 int main() {
-#ifndef a    
-#define a 50// redefine
+#ifndef a
+#define a 50 // redefine
 #endif
 
     printf("%d", a);
